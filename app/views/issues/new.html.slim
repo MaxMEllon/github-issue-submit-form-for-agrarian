@@ -15,7 +15,7 @@
             h4 Content
             .editor id="editor"
               = f.text_area :content, 'v-model' => 'input', style: 'height: 450px'
-              div.marked v-html="input | marked"
+              div.marked.markdown-body v-html="input | marked"
           .uk-form-row
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored type='submit'
               = fa_icon 'comment'

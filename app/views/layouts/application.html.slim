@@ -26,4 +26,10 @@ body
               li = 'Powered by Ruby on Rails / Google Material Design Lite'
               li = 'Copyright (c) Agrarian'
 
+- if notice
+  javascript:
+    UIkit.notify({ message: '#{notice}', timeout: 3000 });
 
+- if alert
+  javascript:
+    UIkit.notify({ message: '#{alert}', timeout: 3000, status: 'danger' });

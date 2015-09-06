@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'dashboard#new'
-  post '/dashboard', to: 'dashboard#create'
+  root to: 'issues#new'
+  resources :issues, only: [:new, :create]
 end

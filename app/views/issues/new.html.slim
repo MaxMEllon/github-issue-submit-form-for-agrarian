@@ -6,15 +6,15 @@
         .logo
           = image_tag 'https://raw.githubusercontent.com/sukesan1984/agrarian/master/public/favicon.ico'
           h4.center Issue Form for Agrarian
-      form.uk-form.uk-form-horizontal method='post' action='/dashboard'
+      = form_for @issue, html: { class: 'uk-form uk-form-stacked' } do |f|
         .mdl-cell.mdl-cell--12-col
           .uk-form-row
             h4 Title
-            input#title type='text' placeholder='title' style='width: 100%;'
+            = f.text_field :title, style: 'width: 100%'
           .uk-form-row
             h4 Content
             .editor id="editor"
-              textarea#content style='height: 400px;' v-model="input"
+              = f.text_area :content, 'v-model' => 'input', style: 'height: 450px'
               div.marked v-html="input | marked"
           .uk-form-row
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored type='submit'

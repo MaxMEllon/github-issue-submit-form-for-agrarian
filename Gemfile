@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -39,7 +38,7 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
 end
 
-gem 'uikit-sass-rails'
+gem 'uikit-sass-rails', git: 'git://github.com/8398a7/uikit-sass-rails'
 gem 'slim-rails'
 gem 'devise'
 gem 'devise-i18n'

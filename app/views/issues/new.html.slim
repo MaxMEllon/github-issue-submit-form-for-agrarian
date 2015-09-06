@@ -13,12 +13,12 @@
             = f.text_field :title, style: 'width: 100%'
           .uk-form-row
             h4 Content
-            .editor id="editor"
-              = f.text_area :content, 'v-model' => 'input', style: 'height: 450px'
-              div.marked.markdown-body v-html="input | marked"
+          .editor#editor
+            = f.text_area :content, 'v-model' => 'input', style: 'height: 450px'
+            div.marked.markdown-body v-html="input | marked"
           .uk-form-row
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored type='submit'
-              = fa_icon 'comment'
+            = fa_icon 'comment'
 
   .mdl-cell.mdl-cell--1-col
 script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.5/vue.min.js"
@@ -26,8 +26,8 @@ script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.mi
 link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_light.min.css"
 
 javascript:
-   (function() {
-  marked.setOptions({
+  (function() {
+    marked.setOptions({
       highlight: function(code, lang) {
           return hljs.highlightAuto(code, [lang]).value;
       }

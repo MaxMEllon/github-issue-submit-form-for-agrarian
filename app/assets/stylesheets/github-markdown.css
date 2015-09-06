@@ -30,6 +30,7 @@
 .markdown-body h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  border-bottom: 1px #999 solid
 }
 
 .markdown-body img {
@@ -131,14 +132,17 @@
 }
 
 .markdown-body h1 {
+  border-bottom: 1px #999 solid
   font-size: 30px;
 }
 
 .markdown-body h2 {
+  border-bottom: 1px #999 solid
   font-size: 21px;
 }
 
 .markdown-body h3 {
+  border-bottom: 1px #999 solid
   font-size: 16px;
 }
 
@@ -180,6 +184,7 @@
 .markdown-body dd {
   margin-left: 0;
 }
+  border-bottom: 1px #999 solid
 
 .markdown-body code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -293,6 +298,7 @@
 
 .markdown-body h1 .anchor {
   line-height: 1;
+  border-bottom: 1px solid #eee;
 }
 
 .markdown-body h2 {

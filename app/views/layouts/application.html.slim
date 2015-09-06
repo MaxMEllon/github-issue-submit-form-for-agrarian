@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Agrarian
+    meta charset='utf-8'
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+body
+  #container
+    .mdl-layout.mdl-js-layout
+      header.mdl-layout__header
+        .mdl-layout__header-row
+          span.mdl-layout-title Agrarian
+          .mdl-layout-spacer
+      main.mdl-layout__content
+        == yield
+      footer.mdl-mega-footer
+        .mdl-mega-footer__middle-section
+          .mdl-mega-footer__drop-down-section
+            input.mdl-mega-footer__heading-checkbox type="checkbox" checked=''
+          .mdl-mega-footer__bottom-section
+            .mdl-logo Agrarian by sukesan1984
+            ul.mdl-mega-footer__link-list
+              li = 'Powered by Ruby on Rails / Google Material Design Lite'
+              li = 'Copyright (c) Agrarian'
+
+

@@ -1,0 +1,45 @@
+.content.mdl-grid.mdl-grid--no-spacing
+  .mdl-cell.mdl-cell--1-col
+  .mdl-cell.mdl-cell--10-col
+    .subpageheader.mdl-cell--12-col
+      .styles__ribbon.styles__ribbon--icons
+        .logo
+          = image_tag 'https://raw.githubusercontent.com/sukesan1984/agrarian/master/public/favicon.ico'
+          h4.center Issue Form for Agrarian
+      form.uk-form.uk-form-horizontal method='post' action='/dashboard'
+        .mdl-cell.mdl-cell--12-col
+          .uk-form-row
+            h4 Title
+            input#title type='text' placeholder='title' style='width: 100%;'
+          .uk-form-row
+            h4 Content
+            .editor id="editor"
+              textarea#content style='height: 400px;' v-model="input"
+              div.marked v-html="input | marked"
+          .uk-form-row
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored type='submit'
+              = fa_icon 'submit', text: 'Submit'
+
+  .mdl-cell.mdl-cell--1-col
+script src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"
+script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.5/vue.min.js"
+script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"
+link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_light.min.css"
+
+javascript:
+   (function() {
+  marked.setOptions({
+      highlight: function(code, lang) {
+          return hljs.highlightAuto(code, [lang]).value;
+      }
+  });
+  new Vue({
+      el: '#editor',
+      data: {
+          input: ''
+      },
+      filters: {
+          marked: marked
+      }
+  })
+  }).call(this);
